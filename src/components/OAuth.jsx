@@ -15,14 +15,13 @@ function OAuth() {
       const provider = new GoogleAuthProvider();
       const userCredential = await signInWithPopup(auth, provider);
       const user = userCredential.user;
-      console.log(userCredential);
 
       // get document by ID
       // https://softauthor.com/firebase-firestore-get-document-by-id/
       const docRef = doc(db, "users", user.uid);
       const docSnap = await getDoc(docRef);
 
-      // If user doesn't exist in our db, create user by setDoc
+      // If user doesn't exist in our db, save user by setDoc
       if (!docSnap.exists()) {
         await setDoc(doc(db, "users", user.uid), {
           name: user.displayName,
