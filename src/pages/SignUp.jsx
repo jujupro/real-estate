@@ -8,6 +8,7 @@ import {
 } from "firebase/auth";
 import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase.config";
+import OAuth from "../components/OAuth";
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
 
@@ -48,11 +49,12 @@ function SignUp() {
         displayName: name, //update displayName with the name in the state
       });
 
-      //save new user to firestore db
+      //Create user data reference
       const formDataCopy = { ...formData };
       delete formDataCopy.password;
       formDataCopy.timestamp = serverTimestamp();
 
+      //save new user to firestore db
       //https://firebase.google.com/docs/firestore/manage-data/add-data
       await setDoc(doc(db, "users", user.uid), formDataCopy);
 
@@ -116,6 +118,8 @@ function SignUp() {
             </button>
           </div>
         </form>
+
+        <OAuth />
 
         <Link to="/sign-in" className="registerLink">
           Sign In Instead
