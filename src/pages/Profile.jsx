@@ -36,7 +36,6 @@ function Profile() {
       }
     } catch (error) {
       toast.error("Update Profile Failed");
-      console.log(error);
     }
   };
 
