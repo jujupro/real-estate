@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import Slider from "../components/Slider";
 import forRent from "../assets/jpg/forRent.jpg";
 import forSale from "../assets/jpg/forSale.jpg";
 
@@ -11,8 +11,8 @@ function Explore() {
       </header>
 
       <main>
-        {/*<Slider />*/}
-
+        <Slider />
+        <p className="exploreCategoryHeading">Categories</p>
         <div className="exploreCategories">
           <Link to="/category/rent">
             <img src={forRent} alt="rent" className="exploreCategoryImg" />
