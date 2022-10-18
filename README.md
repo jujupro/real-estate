@@ -1,9 +1,18 @@
-# Getting Started with Create React App
+# Real Estate Marketplace
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React/Firebase website to help users find and list homes for sale or for rent.
+
+## Built With
+
+* React
+* Firebase
+* Google OAuth
+* Geocoding API
+* Leaflet map
+* Toastify
+* React Swiper
 
 ## Available Scripts
-
 In the project directory, you can run:
 
 ### `npm start`
